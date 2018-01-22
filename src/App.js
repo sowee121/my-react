@@ -4,7 +4,6 @@ import './App.scss';
 import 'element-theme-default';
 
 import MyNav from './components/navMenu';
-
 class App extends Component {
   render() {
     return (
