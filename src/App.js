@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.scss';
+import 'element-theme-default';
 
 import MyNav from './components/navMenu';
 
