@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+      var MyComponent_ES5 = React.createClass({
+        handleClick: function() {
+          this.refs.myTextInput.focus();
+        },
+        render: function() {
+          return (
+            <div>
+              <input type="text" ref="myTextInput" />
+              <input type="button" value="Focus the text input" onClick={this.handleClick} />
+            </div>
+          );
+        }
+      });
+
+      /******************************/
+      
+      class MyComponent extends React.Component{
+        constructor(props){
+          super(props);
+   
+          // ES6 必须手动绑定this
+          this.handleClick = this.handleClick.bind(this);
+        }
+          
+        handleClick() {
+          // this.refs.[refName]获取DOM元素
+          this.refs.myTextInput.focus();
+        }
+
+        handleChange() {
+          console.log(this.refs.myTextInput.value)
+        }
+
+        render() {
+          return (
+            <div>
+              <input type="text" ref="myTextInput" onChange={ this.handleChange.bind(this) } />
+              <input type="button" value="Focus input" onClick={this.handleClick} />
+              {/*<input type="button" value="Focus input bindThis" onClick={ this.handleClick.bind(this) } />*/}
+              {/*<input type="button" value="Focus input arrowFun" onClick={ () => this.handleClick() }/>*/}
+
+            </div>
+          );
+        }
+      }
+
+      ReactDOM.render(
+        <MyComponent />,
+        document.getElementById('example')
+      );
+    </script>
+  </body>
+</html>

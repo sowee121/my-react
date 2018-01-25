@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+      var NotesList_ES5 = React.createClass({
+        render: function() {
+          return (
+            <ol>
+              {
+                React.Children.map(this.props.children, function (child) {
+                  return <li>{child}</li>;
+                })
+              }
+            </ol>
+          );
+        }
+      });
+      
+      /*************************/
+
+      class NotesList extends React.Component{
+          constructor(props){
+            super(props);
+          }
+          render(){
+            return (
+              <ol>
+                {
+                  React.Children.map(this.props.children, (child) => ( <li>{child}</li>) )
+                }
+              </ol>
+            );
+          }
+      }
+
+      ReactDOM.render(
+        <NotesList>
+          <span>Vue</span>
+          <span>React</span>
+          <span>Angular</span>
+        </NotesList>,
+        document.getElementById('example')
+      );
+    </script>
+  </body>
+</html>
+
