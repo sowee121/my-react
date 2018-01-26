@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="./build/react.js"></script>
+    <script src="./build/react-dom.js"></script>
+    <script src="./build/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+        let demoList = [
+          'Render JSX',
+          'Use JavaScript in JSX',
+          'Use array in JSX',
+          'Define a component',
+          'this.props.children',
+          'PropTypes',
+          'Finding a DOM node',
+          'this.state',
+          'Form',
+          'Component Lifecycle',
+          'Http--Axios',
+          'Display value from a Promise'
+        ]
+
+       ReactDOM.render(
+        <ol>
+        {
+          demoList.map((item, index) => {
+            let path = `./demo`+ (index+1<10 ? `0`: ``) + (index+1) + `/index.html`;
+            return <li key={index}><a href= {path}> {item} </a></li>;
+          })
+        }
+        </ol>,
+        document.getElementById('example')
+      );
+    </script>
+  </body>
+</html>

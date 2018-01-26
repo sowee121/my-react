@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+      {/*this.state*/}
+
+      var LikeButton_ES5 = React.createClass({
+        getInitialState: function() {
+          return {liked: false};
+        },
+        handleClick: function(event) {
+          this.setState({liked: !this.state.liked});
+        },
+        render: function() {
+          var text = this.state.liked ? 'like' : 'haven\'t liked';
+          return (
+            <p onClick={this.handleClick}>
+              You {text} this. Click to toggle.
+            </p>
+          );
+        }
+      });
+
+      /************************/
+
+      class LikeButton extends React.Component {
+        constructor(props) {
+          super(props);
+
+          // 状态是私有的，完全受控于当前组件
+          this.state = {
+            liked: false
+          }
+        }
+        
+        handleClick() {
+          // this.setState() ——改变状态
+          this.setState({
+            liked: !this.state.liked
+          })
+        }
+
+        render() {
+          let text = this.state.liked ? 'like' : 'haven\'t liked';
+          let btnText = this.state.liked ? '取消点赞' : '点赞';   
+          return (
+            <div>
+              <p>You {text} this. Click Btn to toggle.</p> <button onClick={ this.handleClick.bind(this) }>{btnText}</button>
+            </div>
+          )
+        }
+      }
+
+      ReactDOM.render(
+        <LikeButton />,
+        document.getElementById('example')
+      );
+    </script>
+  </body>
+</html>
+

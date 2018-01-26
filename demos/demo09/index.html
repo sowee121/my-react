@@ -8,7 +8,9 @@
   <body>
     <div id="example"></div>
     <script type="text/babel">
-      var Input = React.createClass({
+      {/*Form*/}
+
+      var Input_ES5 = React.createClass({
         getInitialState: function() {
           return {value: 'Hello!'};
         },
@@ -25,6 +27,31 @@
           );
         }
       });
+
+      /****************************/
+      
+      class Input extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            value : "Hello!"
+          }
+        }
+
+        handleChange(event) {
+          this.setState({ value : event.target.value })
+        }
+
+        render() {
+          let val = this.state.value;
+          return (
+            <div>
+              <input type="text" value={val} onChange={ (event) => this.handleChange(event) } />
+              <p>{val}</p>
+            </div>
+          )
+        }
+      }
 
       ReactDOM.render(<Input/>, document.getElementById('example'));
     </script>

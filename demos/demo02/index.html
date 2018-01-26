@@ -8,19 +8,16 @@
   <body>
     <div id="example"></div>
     <script type="text/babel">
-      var HelloMessage_ES5 = React.createClass({
-        render: function() {
-          return <h1>Hello {this.props.name}</h1>;
-        }
-      });
-      
-      // 无状态组件
-      const HelloMessage = (props) => (
-        <h1>Hello {props.name} !</h1>
-      );
+      {/*Use JavaScript in JSX*/}
+
+      var names = ['Alice', 'Emily', 'Kate'];
 
       ReactDOM.render(
-        <HelloMessage name="Sowee" />,
+        <div>
+        {
+          names.map((name, index) => <div key={index}>Hello, {name}!</div>)
+        }
+        </div>,
         document.getElementById('example')
       );
     </script>

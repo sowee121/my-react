@@ -5,16 +5,22 @@
     <script src="../build/react-dom.js"></script>
     <script src="../build/browser.min.js"></script>
   </head>
+  <style>
+    body{
+      color: lightgreen
+    }
+  </style>
   <body>
     <div id="example"></div>
     <script type="text/babel">
-      var Hello = React.createClass({
+      {/*Component Lifecycle*/}
+
+      var Hello_ES5 = React.createClass({
         getInitialState: function () {
           return {
             opacity: 1.0
           };
         },
-
         componentDidMount: function () {
           this.timer = setInterval(function () {
             var opacity = this.state.opacity;
@@ -27,7 +33,6 @@
             });
           }.bind(this), 100);
         },
-
         render: function () {
           return (
             <div style={{opacity: this.state.opacity}}>
@@ -36,6 +41,37 @@
           );
         }
       });
+
+      /***********************/
+      
+      class Hello extends React.Component {
+        constructor(props){
+          super(props);
+          this.state = { opacity: 1.0 }
+        }
+
+        componentDidMount() {
+          this.timer = setInterval( () => {
+            let opa = this.state.opacity;
+            opa -= 0.02;
+            if (opa < 0.01) opa = 1;
+            this.setState({ opacity : opa })
+          },100)
+        }
+
+        componentWillUnmount() {
+          clearInterval(this.timer);
+        }
+        
+        render() {
+          return (
+            <div style={{opacity: this.state.opacity}}>
+              Hello {this.props.name}
+            </div>
+          );
+        }
+
+      }
 
       ReactDOM.render(
         <Hello name="world"/>,

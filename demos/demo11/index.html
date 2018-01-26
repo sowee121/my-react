@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+      {/*http--axios*/}
+
+      var UserGist_ES5 = React.createClass({
+        getInitialState: function() {
+          return {
+            username: '',
+            lastGistUrl: ''
+          };
+        },
+
+        componentDidMount: function() {
+          axios.get(this.props.source).then((res) => {
+            console.log(res)
+            var lastGist = res.data[0];
+            this.setState({
+              username: lastGist.owner.login,
+              lastGistUrl: lastGist.html_url
+            });
+          }); 
+        },
+
+        render: function() {
+          return (
+            <div>
+              {this.state.username}'s last gist is <a href={this.state.lastGistUrl}>here</a>.
+            </div>
+          );
+        }
+      });
+
+      /***********************/
+
+      class UserGist extends React.Component {
+         constructor(props) {
+            super(props);
+            this.state = {
+              username: '',
+              lastGistUrl: ''
+            }
+         }
+
+         componentDidMount() {
+           axios.get(this.props.source).then((res) => {
+            console.log(res)
+            var lastGist = res.data[0];
+            this.setState({
+              username: lastGist.owner.login,
+              lastGistUrl: lastGist.html_url
+            });
+          }); 
+         }
+
+         render() {
+          return (
+            <div>
+              {this.state.username}'s last gist is <a href={this.state.lastGistUrl}>here</a>.
+            </div>
+          );
+        }
+      }
+
+      ReactDOM.render(
+        <UserGist source="https://api.github.com/users/octocat/gists" />,
+        document.getElementById('example')
+      );
+    </script>
+  </body>
+</html>
