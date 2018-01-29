@@ -22,8 +22,8 @@ const ButtonGroup = () => (
 			<Button plain={true} type="info">信息按钮</Button>
 		</div>
 	</div>
-  )
-  const BadgeGroup = () => (
+)
+const BadgeGroup = () => (
 	<div>
 		<Badge value={ 200 } max={ 99 } style={{marginRight: '50px'}}>
 			<Button size="small">评论</Button>
@@ -32,7 +32,7 @@ const ButtonGroup = () => (
 			<Button size="small">回复</Button>
 		</Badge>
 	</div>
-  )
+)
 
 const routes = [
 	{ path: '/',
@@ -45,17 +45,14 @@ const routes = [
 	{ path: '/example',
 	  main: () => <h2>example</h2>
 	}
-  ]
+]
 
 class MyNav extends Component {
 	render() {
 		return (
 			<Router>
 			<div  style={{ display: 'flex' }}>
-				<div style={{
-					padding: '10px',
-					width: '200px',
-				}}>
+				<div style={{ padding: '10px',width: '200px' }}>
 					<Menu  defaultActive="1" className="el-menu-vertical-demo" mode="vertical" onSelect={this.onSelect.bind(this)}>
 						<Menu.Item index="1"><i className="el-icon-message"></i><Link to="/">菜单一</Link></Menu.Item>
 						<Menu.Item index="2"><i className="el-icon-menu"></i><Link to="/badge">菜单二</Link></Menu.Item>					
