@@ -41,13 +41,26 @@
         handleChange(event) {
           this.setState({ value : event.target.value })
         }
-
+      
         render() {
           let val = this.state.value;
           return (
             <div>
-              <input type="text" value={val} onChange={ (event) => this.handleChange(event) } />
+              <input type="text" value={val} onChange={ (event) => this.handleChange(event) } /> 
               <p>{val}</p>
+
+              {/**event.target返回触发事件的元素, event.currentTarget返回绑定事件的元素**/}
+              <button style={{ padding: "10px" }} >
+                 <span onClick={(event) => {  
+                    event.stopPropagation();  // 阻止事件冒泡
+                    console.log(`${event.target.nodeName} is clicked`)
+                 }}>Click span</span>
+              </button>
+               <button style={{ padding: "10px", marginLeft: "20px" }} 
+                  onClick={(event) => {  
+                    if(event.target !== event.currentTarget) return false;  // 阻止子元素继承父元素的绑定事件
+                    console.log(`${event.target.nodeName} is clicked`)
+               }}> <span>Click button</span> </button>
             </div>
           )
         }
