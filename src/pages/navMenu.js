@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-    BrowserRouter as Router,
+  BrowserRouter as Router,
 	Route,
 	Link
 } from 'react-router-dom';
@@ -9,12 +9,6 @@ import { Menu, Button, Badge}  from 'element-react';
 
 const ButtonGroup = () => (
 	<div>
-		<div style={{ padding: '20px 0' }}>
-			<Button type="success">成功按钮</Button>
-			<Button type="warning">警告按钮</Button>
-			<Button type="danger">危险按钮</Button>
-			<Button type="info">信息按钮</Button>
-		</div>
 		<div style={{ padding: '20px 0' }}>
 			<Button plain={true} type="success">成功按钮</Button>
 			<Button plain={true} type="warning">警告按钮</Button>

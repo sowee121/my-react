@@ -1,0 +1,92 @@
+:root {
+	--theme-color: #976bdc;
+
+	/* 默认字号 */
+	--default-font-size: 16px;
+
+	/* 默认行高 */
+	--default-line-height: 1.5;
+
+	/* 主要文字颜色 */
+	--text-primary-color: #000;
+
+	/* 次要文字颜色 */
+	--text-secondary-color: #333;
+
+	/* 提示文字颜色 */
+	--text-tips-color: #999;
+
+	/* 错误主题颜色 */
+	--error-color: #ff0000;
+
+	/* 一般的背景颜色 */
+	--bg-color: #fff;
+
+	/* 灰色 */
+	--grey: #ccc;
+	
+	/* 主要紫色 */
+	--purple-color: #7c49cc;
+
+	/* 浅紫 */
+	--light-purple: #af87ff;
+
+	/* 粉红 */
+	--pink: #c770d5;
+
+	--light-pink: #f87fcc;
+
+	/* 文字深蓝色 */
+	--dark-blue: #34495e;
+
+	/* 灰深蓝 */
+	--grey-dark-blue: #34495e;
+
+	/* 湖蓝 */
+	--acid-blue: #72a1ee;
+	
+	/* 深湖蓝 */
+	--vivid-blue: #1da9de;
+
+	/* 橘红色 */
+	--tangerine: #ff7673;
+
+	/* 浅橘红色 */
+	--grey-tangerine: #fa7773;
+
+	/* 橘黄色 */
+	--orange: #fd9e64;
+
+	/* 一般渐变背景颜色 */
+	--gardientColor {
+		background: -moz-linear-gradient(to right, #7d44cb, #f77574) no-repeat;
+		background: -webkit-linear-gradient(to right, #7d44cb, #f77574) no-repeat;
+		background: -o-linear-gradient(to right, #7d44cb, #f77574) no-repeat;
+		background: linear-gradient(to right, #7d44cb, #f77574) no-repeat;
+	}
+
+	/* 一般渐变背景颜色hover */
+	--gardientColorHover {
+		background: -moz-linear-gradient(to right, #621ac6, #f25352) no-repeat;
+		background: -webkit-linear-gradient(to right, #621ac6, #f25352) no-repeat;
+		background: -o-linear-gradient(to right, #621ac6, #f25352) no-repeat;
+		background: linear-gradient(to right, #621ac6, #f25352) no-repeat;
+	}
+
+	/* 清除浮动 */
+	--clearfix {
+		&:before, &:after {
+			content: "";
+			display: table;
+		}
+		&:after {
+			clear: both;
+		}
+	}
+
+	/*固定宽度居中*/
+	--center{
+		width: 1000px;
+		margin: 0 auto;
+	}
+}
