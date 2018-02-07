@@ -1,0 +1,72 @@
+@charset "utf-8";
+
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+body {
+    font-family: Microsoft Yahei, Arial, Helvetica, sans-serif;
+    position: relative;
+    font-size: 14px;
+    color: #333;
+	box-sizing: border-box;
+}
+ol, ul {
+    list-style: none;
+}
+a,input{
+    outline: none!important;
+}
+a { 
+	text-decoration: none; 
+	background: transparent; 
+	outline: 0; 
+}
+a:hover, a:focus, a:active { 
+	text-decoration: none; 
+	outline: 0;
+}
+i, b, em {
+	font-style: normal;
+	font-weight: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+}
+table { border-collapse: collapse; border-spacing: 0; }
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;	
+}
+
+input , button {
+	background-color: transparent;
+}
+
+input:focus, select:focus, textarea:focus, button:focus {
+	outline: none;	
+}
+
+button.disabled,input[type=button].disabled{
+	cursor: not-allowed;
+	background-color: #999 !important;
+}
+/*去除chrome中input的黄色背景*/
+input:-webkit-autofill,textarea:-webkit-autofill,select:-webkit-autofill {
+	-webkit-box-shadow: 0 0 0 1000px white inset;
+}
+input[type=text]:focus, input[type=password]:focus, textarea:focus {
+	-webkit-box-shadow: 0 0 0 1000px white inset;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none !important;
+	margin: 0;
+}
+input[type="number"]{
+	-moz-appearance:textfield;
+}

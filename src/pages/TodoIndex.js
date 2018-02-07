@@ -11,6 +11,7 @@ export default class TodoIndex extends Component {
 				<h1 className="todoTitle">todos</h1>
 				<div className="todoMain">
 					<Todo/ >
+					<TodoList/ >
 					<TodoFooter/ >
 				</div>
 			</div>
