@@ -22,10 +22,6 @@ const routes = [
 ]
 
 class MyNav extends Component {
-	constructor(props) {
-	  super(props);
-	}
-
 	render() {
 		const { location } = this.props;
 		return (
