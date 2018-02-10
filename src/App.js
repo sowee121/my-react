@@ -4,7 +4,7 @@ import logo from './logo.svg';
 import './App.scss';
 import 'element-theme-default';
 
-import MyNav from './pages/NavMenu';
+import MyNav from './pages/navMenu';
 class App extends Component {
   render() {
     return (
