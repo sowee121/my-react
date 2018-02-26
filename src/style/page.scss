@@ -62,8 +62,11 @@
 			font-size: 18px;		
 			color: #e6e6e6;
 			padding: 10px;
-			&.all-ckecked{
-				color: #888;
+			& input[type="checkbox"] {
+				display: none;
+				&:checked + i {
+					color: #888;
+				}
 			}
 		}
 	}
