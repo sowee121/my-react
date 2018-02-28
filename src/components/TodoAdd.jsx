@@ -26,7 +26,7 @@ export default class Todo extends Component {
 			<div className="todoInput">
 				<label className="toggle-all">
 					<input type="checkbox" checked={this.props.isAllChecked} onChange={event => this.handlerAllChecked(event)} />	
-					<i className="el-icon-arrow-down"></i>				
+					<i className="el-icon-arrow-down"></i>
 				</label>
 				<input onKeyUp={event => this.handlerEnter(event)} className="newTodo" placeholder="What needs to be done?"/ >
 			</div>

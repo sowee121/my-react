@@ -46,7 +46,7 @@ export default class TodoIndex extends Component {
 	clearDone(){
 		let todos = this.state.todos.filter(todo => !todo.isDone);
 		this.setState({
-			todos: todos,
+			todos,
 			isAllChecked: false
 		});
 		Utils.setCookie('todos', todos);
@@ -63,7 +63,11 @@ export default class TodoIndex extends Component {
 				isAllChecked: isDone
 			})
 		}else{
-			this.state.todos[index].isDone = isDone;
+			let todos = this.state.todos;
+			todos[index].isDone = isDone;
+			this.setState({
+				todos
+			})
 			this.allChecked();
 		}
 		Utils.setCookie('todos', this.state.todos);
@@ -72,7 +76,8 @@ export default class TodoIndex extends Component {
 	render() {
 		let otherProps = {
 			todoCount: this.state.todos.length || 0,
-			todoLeftCount: (this.state.todos && this.state.todos.filter((todo)=>!todo.isDone)).length || 0
+			todoLeftCount: (this.state.todos && this.state.todos.filter((todo)=>!todo.isDone)).length || 0,
+			todoDoneCount: (this.state.todos && this.state.todos.filter((todo)=>todo.isDone)).length || 0,
 		};
 		return (
 			<div className="todoApp">
