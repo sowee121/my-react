@@ -83,7 +83,7 @@ export default class TodoIndex extends Component {
 			<div className="todoApp">
 				<h1 className="todoTitle">todos</h1>
 				<div className="todoMain">
-					<TodoAdd addTodo={this.addTodo.bind(this)}  changeTodoState={this.changeTodoState.bind(this)} isAllChecked={this.state.isAllChecked}/>
+					<TodoAdd addTodo={this.addTodo.bind(this)}  changeTodoState={this.changeTodoState.bind(this)} isAllChecked={this.state.isAllChecked}  {...otherProps}/>
 					<TodoList todos={this.state.todos} deleteTodo={this.deleteTodo.bind(this)} changeTodoState={this.changeTodoState.bind(this)}/>
 					<TodoFooter clearDone={this.clearDone.bind(this)} {...otherProps} />
 				</div>

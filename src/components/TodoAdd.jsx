@@ -4,7 +4,7 @@ export default class Todo extends Component {
 	// 绑定回车事件，添加新任务
 	handlerEnter(event){
 		if(event.keyCode === 13) {
-			let inputValue = event.target.value;
+			let inputValue = event.target.value.trim();
 			if(!inputValue) return false;
 
 			let newTodoItem = {
@@ -22,9 +22,10 @@ export default class Todo extends Component {
     }
 
 	render() {
+		let allCheckedStyle = this.props.todoCount > 0 ? {visibility: "visible"} : {visibility: "hidden"}
 		return (
 			<div className="todoInput">
-				<label className="toggle-all">
+				<label className="toggle-all" style={allCheckedStyle}>
 					<input type="checkbox" checked={this.props.isAllChecked} onChange={event => this.handlerAllChecked(event)} />	
 					<i className="el-icon-arrow-down"></i>
 				</label>
