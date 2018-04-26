@@ -12,15 +12,19 @@ You can find the most recent version of this guide [here](https://github.com/fac
 
 ### `npm start`
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+开发模式下运行程序.<br>
+运行地址： [http://localhost:3000](http://localhost:3000).
 
-The page will reload if you make edits.<br>
+监控文件修改，将自动热加载.<br>
 
 ### `npm test`
 
+在交互监视模式下启动测试运行程序.
+
 
 ### `npm run build`
+
+编译打包程序，发布生产环境，并放在build目录中.
 
 
 
