@@ -1,9 +1,8 @@
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+这个项目是基于[Create React App](https://github.com/facebookincubator/create-react-app)搭建的React快速入门的demo.
 
-Below you will find some information on how to perform common tasks.<br>
-You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
+关于`Create React App`的更多的信息你可以参考 [Create React App](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
-## `npm install`
+### `npm install`
 
 > [可用的脚本命令](#available-scripts)
   - [npm start](#npm-start)
@@ -14,7 +13,6 @@ You can find the most recent version of this guide [here](https://github.com/fac
 
 开发模式下运行程序.<br>
 运行地址： [http://localhost:3000](http://localhost:3000).
-
 监控文件修改，将自动热加载.<br>
 
 ### `npm test`
@@ -25,7 +23,3 @@ You can find the most recent version of this guide [here](https://github.com/fac
 ### `npm run build`
 
 编译打包程序，发布生产环境，并放在build目录中.
-
-
-
-
