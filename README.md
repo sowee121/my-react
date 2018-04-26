@@ -3,7 +3,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
-- **npm install**
+## 快速安装
+## **npm install**
 
 - [可用的脚本命令](#available-scripts)
   - [npm start](#npm-start)
