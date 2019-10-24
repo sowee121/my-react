@@ -33,8 +33,11 @@ export default class TodoFooter extends Component {
 		let closeIconClass = this.state.is_show ? "" : "is_hidden";
 		return (
 			<div className="todoItem" onMouseOver={this.showCloseIcon.bind(this)}  onMouseOut={this.hideCloseIcon.bind(this)}>
-				<input type="checkbox" className="toggle" checked={this.props.isDone}  onChange={this.toggleChange.bind(this)}/>
-				<label className="itemText">{this.props.text}</label>
+				<label>
+					<i className={`ww-icon ww-icon-${this.props.isDone ? 'checked' : 'unchecked'}`} />
+					<input type="checkbox" className="toggle" checked={this.props.isDone}  onChange={this.toggleChange.bind(this)}/>
+				</label>
+				<span className={`itemText ${this.props.isDone ? 'is-done' : ''}`}>{this.props.text}</span>
 				{
 					<i className={`close-item el-icon-close ${closeIconClass}`} onClick={this.handlerDelete.bind(this)}></i>
 				}

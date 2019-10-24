@@ -141,7 +141,7 @@
 		position: relative;
 		font-size: 24px;
 		border-bottom: 1px solid #ededed;
-		padding: 10px 10px 10px 0px;
+		padding: 10px;
 		min-height: 60px;
 		box-sizing: border-box;
 		display: flex;
@@ -150,23 +150,14 @@
 		&:last-child{
 			border-bottom: none;
 		}
-		.toggle{
-			height: 40px;
-			width: 40px;
-			text-align: center;
-			margin: auto 0;
+		.ww-icon {
+			font-size: 30px;
+			color: rgba(175, 47, 47, .8);
+		}
+		input.toggle{
+			display: none;
 			border: none;
 			-webkit-appearance: none;
-			&:after{
-				content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#ededed" stroke-width="3"/></svg>')
-			}
-			&:checked:after{
-				content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#bddad5" stroke-width="3"/><path fill="#5dc2af" d="M72 25L42 71 27 56l-4 4 20 20 34-52z"/></svg>')
-			}
-			&:checked + .itemText{
-				color: #d9d9d9;
-    			text-decoration: line-through;
-			}
 		}
 		.itemText{
 			flex: 1;
@@ -175,6 +166,10 @@
 			white-space: pre-line;
 			word-break: break-all;
 			transition: color 0.3s;
+			&.is-done {
+				color: #d9d9d9;
+    			text-decoration: line-through;
+			}
 		}
 		.close-item{
 			font-size: 12px;
