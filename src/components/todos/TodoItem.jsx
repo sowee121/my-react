@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Icon } from 'antd';
 
 export default class TodoFooter extends Component {
 	constructor(props) {
@@ -26,7 +27,7 @@ export default class TodoFooter extends Component {
 	}
 	// 删除当前任务
 	handlerDelete() {
-		this.props.deleteTodo(this.props.index);	
+		this.props.deleteTodo(this.props.index);
 	}
 
 	render() {
@@ -34,12 +35,12 @@ export default class TodoFooter extends Component {
 		return (
 			<div className="todoItem" onMouseOver={this.showCloseIcon.bind(this)}  onMouseOut={this.hideCloseIcon.bind(this)}>
 				<label>
-					<i className={`ww-icon ww-icon-${this.props.isDone ? 'checked' : 'unchecked'}`} />
-					<input type="checkbox" className="toggle" checked={this.props.isDone}  onChange={this.toggleChange.bind(this)}/>
+					<i className={`checkbox-icon ww-icon ww-icon-${this.props.isDone ? 'checked' : 'unchecked'}`} />
+					<input type="checkbox" className="toggle" checked={this.props.isDone}  onChange={this.toggleChange.bind(this)} />
 				</label>
 				<span className={`itemText ${this.props.isDone ? 'is-done' : ''}`}>{this.props.text}</span>
 				{
-					<i className={`close-item el-icon-close ${closeIconClass}`} onClick={this.handlerDelete.bind(this)}></i>
+					<Icon type="close" className={`close-icon ${closeIconClass}`} onClick={this.handlerDelete.bind(this)} />
 				}
 			</div>
 		)

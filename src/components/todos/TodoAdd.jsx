@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Icon } from 'antd';
 
 export default class Todo extends Component {
 	// 绑定回车事件，添加新任务
@@ -26,10 +27,10 @@ export default class Todo extends Component {
 		return (
 			<div className="todoInput">
 				<label className="toggle-all" style={allCheckedStyle}>
-					<input type="checkbox" checked={this.props.isAllChecked} onChange={event => this.handlerAllChecked(event)} />	
-					<i className="el-icon-arrow-down"></i>
+					<input type="checkbox" checked={this.props.isAllChecked} onChange={event => this.handlerAllChecked(event)} />
+					<Icon type="down" />
 				</label>
-				<input onKeyUp={event => this.handlerEnter(event)} className="newTodo" placeholder="What needs to be done?"/ >
+				<input onKeyUp={event => this.handlerEnter(event)} className="newTodo" placeholder="What needs to be done?" />
 			</div>
 		)
 	}

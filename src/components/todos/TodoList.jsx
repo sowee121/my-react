@@ -6,9 +6,7 @@ export default class TodoFooter extends Component {
 		return (
 			<div className="todoList">
 				{
-					this.props.todos.map((todo, index) => {
-						return <TodoItem key={index} {...todo} index={index} {...this.props}/>
-					})
+					this.props.todos.map((todo, index) => <TodoItem key={index} {...todo} index={index} {...this.props}/>)
 				}
 			</div>
 		)

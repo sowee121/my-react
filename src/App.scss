@@ -1,23 +1,22 @@
 .App {
-  & .App-header {
-      text-align: center;
-      background-color: #222;
-      padding: 20px;
-      color: white;
-      & .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-        height: 80px;
-      }
-    }
-  & .App-main{
-    padding: 30px;
-  }
+	min-width: 1024px;
+	& .App-header {
+		padding: 20px;
+		text-align: center;
+		background-color: #222;
+		.App-logo {
+			animation: App-logo-spin infinite 20s linear;
+			height: 80px;
+		}
+	}
+	& .App-main{
+		padding: 30px;
+	}
 }
 
-
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
 }
 
 @import url('//at.alicdn.com/t/font_1474754_rr4qr01bx5.css'); // 字体图标

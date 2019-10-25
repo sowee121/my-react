@@ -1,9 +1,10 @@
+// mixin
 @mixin placeholder{
 	color: #E8E6E6;
 	font-style: italic;
 }
 
-
+// todos style
 .todoApp{
     background: #F5F5F5;
     position: relative;
@@ -17,11 +18,12 @@
 		text-align: center;
 		margin: 0;
 		padding: 20px;
-		color: rgba(175, 47, 47, 0.3);
+		color: rgba(175, 47, 47, 0.6);
 		box-sizing: border-box;
 	}
 	.todoMain{
-		width: 550px;
+		// min-width: 600px;
+		max-width: 80%;
 		margin: 20px auto;
 		box-sizing: border-box;
 		box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
@@ -60,7 +62,7 @@
 		}
 		
 		.toggle-all{
-			font-size: 18px;		
+			font-size: 20px;
 			color: #e6e6e6;
 			padding: 10px;
 			& input[type="checkbox"] {
@@ -128,7 +130,11 @@
 			right: 0;
 			height: 20px;
 			overflow: hidden;
-			box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 8px 0 -3px #f6f6f6, 0 9px 1px -3px rgba(0, 0, 0, 0.2), 0 16px 0 -6px #f6f6f6, 0 17px 2px -6px rgba(0, 0, 0, 0.2);
+			box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2),
+						0 8px 0 -3px #f6f6f6,
+						0 9px 1px -3px rgba(0, 0, 0, 0.2),
+						0 16px 0 -6px #f6f6f6,
+						0 17px 2px -6px rgba(0, 0, 0, 0.2);
 		}
 	}
 
@@ -150,7 +156,7 @@
 		&:last-child{
 			border-bottom: none;
 		}
-		.ww-icon {
+		.checkbox-icon {
 			font-size: 30px;
 			color: rgba(175, 47, 47, .8);
 		}
@@ -171,13 +177,13 @@
     			text-decoration: line-through;
 			}
 		}
-		.close-item{
-			font-size: 12px;
+		.close-icon{
+			font-size: 14px;
 			font-weight: 600;
 			color: #cc9a9a;
 			display: inline-block;
 			padding: 10px;
-			transition: color 0.2s ease-in;
+			transition: color 0.2s;
 			&:hover{
 				color: #af5b5e;
 			}

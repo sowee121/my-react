@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import '../style/page.scss';
-import Utils from '../utils/index';
-import TodoAdd from '../components/TodoAdd';
-import TodoList from '../components/TodoList';
-import TodoFooter from '../components/TodoFooter';
+import '@/style/todo.scss';
+import Utils from '@/utils/index';
+
+import TodoAdd from '@/components/todos/TodoAdd';
+import TodoList from '@/components/todos/TodoList';
+import TodoFooter from '@/components/todos/TodoFooter';
 
 export default class TodoIndex extends Component {
 	constructor(props){
